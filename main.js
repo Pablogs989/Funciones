@@ -154,13 +154,66 @@ function primos() {
     let numero = prompt("Escribe un numero: ");
     if (numero <= 1) {
         return false;
-      }
-      for (let i = 2; i <= Math.sqrt(numero); i++) {
+    }
+    for (let i = 2; i <= Math.sqrt(numero); i++) {
         if (numero % i === 0) {
-          return false;
+            return false;
         }
-      }
-      return true;
+    }
+    return true;
 }
 
-console.log(primos());
+//console.log(primos());
+
+
+
+//Extra
+
+function obtenerImpares(numeros) {
+    let numerosImpares = [];
+    numeros.forEach(numero => {
+        if (numero % 2 !== 0) {
+            numerosImpares.push(numero);
+        }
+    });
+    return numerosImpares
+}
+
+console.log(obtenerImpares(numeros));
+
+function sumarArray(numeros) {
+    let suma = 0;
+    numeros.forEach(numero => {
+        suma += numero;
+    });
+    return suma;
+}
+
+console.log(sumarArray(numeros));
+
+function multiplicarArray(numeros) {
+    let multiplicacion = 1;
+    numeros.forEach(numero => {
+        multiplicacion *= numero;
+    });
+    return multiplicacion;
+}
+
+console.log(multiplicarArray(numeros));
+
+function checkPassword(contraseñaCorrecta) {
+    let intentos = 0;
+    let contraseña = prompt("Contraseña: ");
+    do {
+        if (contraseña === contraseñaCorrecta) {
+            return alert("Enhorabuena");
+        } else {
+            intentos++;
+            alert("Te quedan " + (3 - intentos) + " intentos");
+            contraseña = prompt("Contraseña: ");
+        }
+    } while (intentos < 2);
+    return alert("No te quedan intentos");
+}
+
+checkPassword("hola");
