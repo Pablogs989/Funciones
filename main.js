@@ -98,16 +98,24 @@ function esPalindromo(palabra) {
     } else if (palabra === "") {
         return "No es un formato correcto";
     } else {
-        // numeroLetras = cuentaCaracteres(palabra);
-        // j = numeroLetras % 2 === 0 ? numeroLetras/2 : (numeroLetras -1)/2;
+        numeroLetras = cuentaCaracteres(palabra);
+        // let palabraArray = [];
+        // let l = 0;
+        // console.log(palabra);
+        // do {
+        //     palabraArray.push(palabra.charAt(l));
+        //     l++;
+        // } while (palabraArray.length != numeroLetras);
+        // console.log(palabraArray);
+        // j = numeroLetras % 2 === 0 ? numeroLetras / 2 : (numeroLetras - 1) / 2;
         // for (let i = 0; i < j;) {
-        //     if (caracterInicial(palabra) == ultimoCaracter(palabra)) {
-        //         i++
-        //     };
-
+        //     if (palabraArray[i] == ultimoCaracter[j - i]) {
+        //         i++;
+        //         bool = true;
+        //     } else bool = false;
         // }
         let inversa = "";
-        for (let i = cuentaCaracteres(palabra); i > 0; i--) {
+        for (let i = numeroLetras; i > 0; i--) {
             inversa += palabra.charAt(i - 1);
         }
         if (palabra === inversa) {
